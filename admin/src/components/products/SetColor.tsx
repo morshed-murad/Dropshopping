@@ -1,11 +1,11 @@
 "use client";
-import { selectedImgType } from "@/types/cartType";
+import { cartProductType, selectedImgType } from "@/types/cartType";
 import React from "react";
-import { cartProduct } from "../../types/cartType";
+
 
 interface SetColorProps {
   images: selectedImgType[];
-  cartProduct: cartProduct;
+  cartProduct: cartProductType;
   handleColorSelect: (value: selectedImgType) => void;
 }
 

@@ -2,11 +2,12 @@
 import React, { useCallback, useState } from "react";
 
 import { Rating } from "@mui/material";
-import { cartProduct, selectedImgType } from "@/types/cartType";
+import { cartProductType, selectedImgType } from "@/types/cartType";
 import SetColor from "@/components/products/SetColor";
 import SetQuantity from "@/components/products/SetQuantity";
 import Button from "@/components/Button";
 import ProductImage from "@/components/products/ProductImage";
+import { useCart } from "@/hooks/useCart";
 
 interface ProductDetailsProps {
   product: any;
@@ -17,7 +18,8 @@ const Horizontal = () => {
 };
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
-  const [cartProduct, setCartProduct] = useState<cartProduct>({
+  const { handleAddProductToCart, cartProducts } = useCart();
+  const [cartProduct, setCartProduct] = useState<cartProductType>({
     id: product.id,
     name: product.name,
     description: product.description,
@@ -27,6 +29,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     quantity: 1,
     price: product.price,
   });
+
+  console.log(cartProducts);
   // it Select the color of image or product
   const handleColorSelect = useCallback(
     (value: selectedImgType) => {
@@ -80,8 +84,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <span className="font-semibold">BRAND: </span>
           {product.brand}
         </div>
-        <div className={product.stock ? "text-teal-400" : "text-rose-400"}>
-          {product.stock ? "In stock" : "Out of stock"}
+        <div className={product.inStock ? "text-teal-400" : "text-rose-400"}>
+          {product.inStock ? "In stock" : "Out of stock"}
         </div>
         <Horizontal />
         <SetColor
@@ -97,7 +101,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         />
         <Horizontal />
         <div className="lg:max-w-[300px]">
-          <Button outline disabled label="Add To Cart" onClick={() => {}} />
+          <Button
+            outline
+            disabled
+            label="Add To Cart"
+            onClick={() => handleAddProductToCart(cartProduct)}
+          />
         </div>
       </div>
     </div>

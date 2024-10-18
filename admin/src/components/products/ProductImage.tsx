@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { cartProduct, selectedImgType } from "../../types/cartType";
+import { cartProductType, selectedImgType } from "../../types/cartType";
 import { product } from "../../utils/product";
 ("use client ");
 
 interface ProductImageProps {
-  cartProduct: cartProduct;
+  cartProduct: cartProductType;
   product: any;
   handleColorSelect: (value: selectedImgType) => void;
 }

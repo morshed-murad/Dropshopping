@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { cartProduct } from "../../types/cartType";
+import { cartProductType} from "../../types/cartType";
 
 interface SetQTYProps {
   cartCounter?: boolean;
-  cartProduct: cartProduct;
+  cartProduct: cartProductType;
   handleQTYIncrease: () => void;
   handleQTYDecrease: () => void;
 }
