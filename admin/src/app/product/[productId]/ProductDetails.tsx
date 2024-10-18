@@ -96,14 +96,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           handleQTYDecrease={handleQTYDecrease}
         />
         <Horizontal />
-        <div className="max-w-[300px]">
-          <Button
-            small
-            outline
-            disabled
-            label="Add To Cart"
-            onClick={() => {}}
-          />
+        <div className="lg:max-w-[300px]">
+          <Button outline disabled label="Add To Cart" onClick={() => {}} />
         </div>
       </div>
     </div>
