@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import CartClient from "./CartClient";
 
 export default function page() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <CartClient  />
+    </div>
+  );
 }
- 

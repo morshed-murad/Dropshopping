@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Navbar/Nav";
 import Footer from "@/components/Footer/Footer";
 import CartProvider from "@/providers/CartProvider";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,6 +33,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700`}
       >
+        <Toaster
+          toastOptions={{
+            style: {
+              background: "rgb(51 65 85)",
+              color: "#fff",
+            },
+          }}
+        />
         <CartProvider>
           <div className="flex flex-col min-h-screen">
             <Nav />
