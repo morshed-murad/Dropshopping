@@ -4,7 +4,7 @@ import { IconType } from "react-icons";
 
 interface ButtonProps {
   label: string;
-  // disabled: boolean;
+  disabled?: boolean;
   outline?: boolean;
   small?: boolean;
   custom?: boolean;
@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 export default function Button({
   label,
-  // disabled,
+  disabled,
   outline,
   small,
   custom,
@@ -23,7 +23,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`disabled:opacity-70 disabled:cursor-not-allowed rounded-m hover:opacity-80 transition w-full border-slate-700 flex items-center justify-center gap-2 ${
+      className={`disabled:opacity-70 disabled:cursor-not-allowed rounded-sm hover:opacity-80 transition w-full border-slate-700 flex items-center justify-center gap-2 ${
         outline ? "bg-white" : "bg-slate-700"
       } ${outline ? "text-slate-700" : "text-white"} ${
         small ? "text-sm font-light" : "text-md font-semibold"

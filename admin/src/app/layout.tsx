@@ -34,10 +34,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700`}
       >
         <Toaster
+          position="top-right"
           toastOptions={{
-            style: {
-              background: "rgb(51 65 85)",
-              color: "#fff",
+            error: {
+              style: {
+                background: "rgb(255 70 80)",
+                color: "#dddd",
+              },
+            },
+            success: {
+              style: {
+                background: "rgb(51 105 80)",
+                color: "#fff",
+              },
             },
           }}
         />

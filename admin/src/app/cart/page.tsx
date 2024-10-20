@@ -1,10 +1,13 @@
 import React from "react";
 import CartClient from "./CartClient";
+import Container from "@/components/Container";
 
 export default function page() {
   return (
-    <div>
-      <CartClient  />
+    <div className="pt-8">
+      <Container>
+        <CartClient />
+      </Container>
     </div>
   );
 }
