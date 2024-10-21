@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { cartProductType, selectedImgType } from "../../types/cartType";
-import { product } from "../../utils/product";
+import { cartProductType, selectedImgType } from "../../src/types/cartType";
+import { product } from "../../src/utils/product";
 ("use client ");
 
 interface ProductImageProps {

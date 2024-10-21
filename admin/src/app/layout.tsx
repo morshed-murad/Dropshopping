@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Navbar/Nav";
 import Footer from "@/components/Footer/Footer";
-import CartProvider from "@/providers/CartProvider";
+import CartProvider from "../providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
